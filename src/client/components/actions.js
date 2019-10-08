@@ -13,9 +13,7 @@ export const RECEIVE = '/todos/RECEIVE';
 function receiveTodos(payload) {
   return {
     type: RECEIVE,
-    payload: {
-      payload
-    }
+    payload: payload
   }
 }
 
@@ -24,9 +22,7 @@ export const FAILURE = '/todos/FAILURE';
 function failureTodos(message) {
   return {
     type: FAILURE,
-    payload: {
-      message
-    }
+    payload: message
   }
 }
 

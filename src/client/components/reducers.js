@@ -6,17 +6,17 @@ const todosState = () => {
     switch (action.type) {
       case REQUEST:
         return Object.assign({}, state, {
-          results: {},
+          todos: {},
           completed: false
         })
       case RECEIVE:
         return Object.assign({}, state, {
-          results: action.payload,
+          todos: action.payload,
           completed: true
         })
       case FAILURE:
         return Object.assign({}, state, {
-          results: action.payload,
+          todos: action.payload,
           completed: true
         })
       default:
