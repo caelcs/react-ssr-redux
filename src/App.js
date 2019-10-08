@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
-import Todos from './client/components/todos';
+import TodosView from './client/components/todos-container';
 
 export default props => {
   return (
@@ -12,7 +12,7 @@ export default props => {
       </ul>
 
       <Switch>
-        <Route path="/todos" component={Todos} />
+        <Route path="/todos" component={TodosView} />
       </Switch>
     </div>
   );

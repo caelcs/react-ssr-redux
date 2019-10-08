@@ -9,6 +9,11 @@ const publicPath = path.join(__dirname, '/public');
 const app = express();
 const compression = require('compression');
 app.use(compression())
+app.get('/fetchtodos', (err, res) => {
+	res.status(200);
+	res.json({ working: true });
+	res.end();
+});
 app.use(express.static(publicPath));
 app.use(htmlMiddleware());
 app.use(storeMiddleware());
