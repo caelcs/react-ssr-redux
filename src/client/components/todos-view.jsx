@@ -3,15 +3,12 @@ import React from 'react';
 class TodosView extends React.Component {
 
   componentDidMount() {
-    console.log('begin fetch');
-    this.props.fetchTodos();
-    console.log('end fetch');
+    const { fetchTodos } = this.props;
+    fetchTodos();
   }
 
   render() {
-    const {todos} = this.props;
-    console.log(todos);
-    //console.log(todos);
+    const { todos } = this.props;
     return <div>{ JSON.stringify(todos, null, 2) }</div>;
   }
 }

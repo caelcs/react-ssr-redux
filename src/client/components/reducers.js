@@ -1,33 +1,24 @@
 import { REQUEST, RECEIVE, FAILURE } from './actions';
 import { combineReducers } from 'redux';
 
-const todos = () => {
-  const all = (state = [], action) => {
+const todosState = () => {
+  const all = (state = {}, action) => {
     switch (action.type) {
       case REQUEST:
-        return [
-          ...state,
-          {
-            todos: {},
-            completed: false
-          }
-        ]
+        return Object.assign({}, state, {
+          results: {},
+          completed: false
+        })
       case RECEIVE:
-        return [
-          ...state,
-          {
-            todos: action.payload,
-            completed: true
-          }
-        ]
+        return Object.assign({}, state, {
+          results: action.payload,
+          completed: true
+        })
       case FAILURE:
-        return [
-          ...state,
-          {
-            todos: action.payload,
-            completed: true
-          }
-        ]
+        return Object.assign({}, state, {
+          results: action.payload,
+          completed: true
+        })
       default:
         return state
     }
@@ -38,8 +29,8 @@ const todos = () => {
 	});
 }
 
-export default todos()
+export default todosState()
 
 export const allTodos = (state) => {
-  return state.todos.all;
+  return state.todosState.all;
 };
